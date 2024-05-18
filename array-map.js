@@ -10,13 +10,13 @@
 
 let arr = [[1,2],[1,2,4],[1,3,4], [2,3,4]];
 
-let newArr = arr.map(innerArr => innerArr[0] === 1? innerArr.push(5) : innerArr);//return에 오염된 값이 들어가는 것 같음
+let newArr = arr.map(innerArr => innerArr[0] === 1? innerArr.push(5) : innerArr);//return에 push된 배열의 index를 리턴한다.
 
-console.log("신기한 패턴:",arr); // [ [ 1, 2, 5 ], [ 1, 2, 4, 5 ], [ 1, 3, 4, 5 ], [ 2, 3, 4 ] ]
+console.log("push를 이용한 패턴:",arr); // [ [ 1, 2, 5 ], [ 1, 2, 4, 5 ], [ 1, 3, 4, 5 ], [ 2, 3, 4 ] ]
 console.log("return받은값:",newArr); //[ 3, 4, 4, [ 2, 3, 4 ] ]
 
 //위의 예제는 foreach라고 생각하고 쓰는 것이 나을 것 같다. return 값이 이상하다.
-//이항 연산자의 좌측 값은 push(5)의 return값일 텐데 이상한 값이 들어있다.
+//이항 연산자의 좌측 값은 push(5)의 return값일 텐데 배열의 인덱스값이 들어있다.
 //위와 같은 예제를 보았는데, 의미상 for_each로 사용하는 것이 바람직 할 것 같다.
 
 
@@ -33,3 +33,7 @@ newArr = arr.map(innerArr => innerArr[0] === 1? [...innerArr,5 ] : innerArr);
 
 console.log(arr); // [ [ 1, 2 ], [ 1, 2, 4 ], [ 1, 3, 4 ], [ 2, 3, 4 ] ]
 console.log("newArr",newArr); // [ [ 1, 2 ], [ 1, 2, 4 ], [ 1, 3, 4 ], [ 2, 3, 4 ] ]
+
+const pushVal = arr.push(1,2,3);
+
+console.log(pushVal); 
