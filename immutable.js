@@ -42,9 +42,11 @@ console.log(Object.is(before, nonImmutableArray));//false
 
 /**
 nonImmutbale :  [ 1, 2, 3, 4 ]
+true
 nonImmutbale :  [ 1, 3, 4 ]
-immutbale :  [ 1, 2, 3 ]
-concat :  [ 1, 2, 3, 4 ]
-immutbale :  [ 1, 2, 3 ]
-filter :  [ 1, 3 ]
+true
+immutbale :  [ 1, 2, 3, 4 ]
+false
+immutbale :  [ 1, 3, 4 ]
+false
  */
